@@ -1,0 +1,162 @@
+#mainWrapper {
+    padding-top: 70px;
+    img {
+        cursor: pointer;
+    }
+}
+
+#breadcrumb .btn-secondary.focus {
+    box-shadow: none;
+}
+
+.card.pelicula {
+    width: 18rem;
+    margin: 10px;
+    &:hover {
+        transition: all ease .5s;
+        box-shadow: none;
+        width: 17.5rem;
+        margin: calc(10px + 4px);
+    }
+}
+
+.badge {
+    cursor: pointer;
+}
+
+.tab-pane h1 {
+    display: inline-block;
+    margin: 10px 10px 0 0;
+}
+
+.footer svg {
+    width: 120px;
+    height: 42px;
+    vertical-align: middle;
+}
+
+.z-depth-5 {
+    box-shadow: 0 27px 24px 0 rgba(0, 0, 0, .2), 0 40px 77px 0 rgba(0, 0, 0, .22);
+}
+
+.modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+}
+
+.icon-account-login {
+    fill: #f00;
+}
+
+#decrement-entrada,
+#increment-entrada {
+    padding: .3rem 1rem;
+}
+
+/*#343A40*/
+
+/* START Ellipsis Sinopsis */
+
+$font-size: .9rem;
+$line-height: 1.5;
+$lines-to-show: 3;
+.card-text {
+    height: $font-size*$line-height*$lines-to-show;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+/* END Ellipsis Sinopsis */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#nEntradas {
+    text-align: center;
+}
+
+.svgAsiento {
+    cursor: pointer;
+}
+
+.ocupado {
+    fill: red;
+    cursor: auto;
+}
+
+.tuSitio {
+    fill: green;
+}
+
+/* START Spinner */
+
+$itemSize: 50;
+$itemSpacing: 2;
+$loaderColor: rgba(61, 92, 126, 0.7);
+$loaderDelay: 100;
+$loaderDuration: 2000;
+$animationTiming: cubic-bezier(.645, .045, .355, 1);
+.loader {
+    display: block;
+    overflow: hidden; // margin-bottom: 15%;
+    font-size: 0;
+    text-align: center;
+    margin-top: 80%;
+}
+
+.loader--3d {
+    transform-style: preserve-3d;
+    perspective: 800px;
+}
+
+.loader-item {
+    display: inline-block;
+    width: $itemSize + px;
+    height: $itemSize + px;
+    margin-left: $itemSpacing + px;
+    background-color: $loaderColor;
+    color: $loaderColor;
+    animation-duration: $loaderDuration + ms;
+    animation-timing-function: $animationTiming;
+    animation-iteration-count: infinite;
+    @for $i from 1 through 6 {
+        &:nth-child(#{$i}) {
+            animation-delay: ($i * $loaderDelay) + ms;
+        }
+    }
+    .loader--flipHoz & {
+        animation-name: flipHoz;
+    }
+    .loader--flipHoz & {
+        @for $i from 1 through 6 {
+            &:nth-child(#{$i}) {
+                animation-delay: ($i * $loaderDelay*1.5) + ms;
+            }
+        }
+    }
+}
+
+@keyframes flipHoz {
+    0% {
+        transform: rotateY(0deg);
+    }
+    40% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(180deg);
+    }
+}
+
+/* END Spinner */
