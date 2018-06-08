@@ -1,5 +1,5 @@
 # Sala de cine
-
+Training Project
 ## Demo
 https://srmelian.github.io/CompraCine/
 
